@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@source "./src/pages/**/*.{js,ts,jsx,tsx,mdx}";
+@source "./src/components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "./src/app/**/*.{js,ts,jsx,tsx,mdx}";
+
+@theme {
+
+  /* Shadow */
+  --shadow-input-shadow: 0 63px 59px rgba(26,33,188,.1);
+  --shadow-course-shadow: 0 40px 20px rgba(0,0,0,.15);
+  --shadow-testimonial-shadow1: 0 5.54348px 11.087px rgba(89,104,118,.05);
+  --shadow-testimonial-shadow2: 5.54348px 38.8043px 110.87px rgba(89,104,118,.15);
+
+    /* Colors */
+  --color-primary: oklch(62.7% 0.194 149.214);
+  --color-secondary: #1a21bc;
+  --color-grey: #57595f;
+  --color-slateGray: #f6faff;
+  --color-deepSlate: #d5effa; 
+  --color-success: #43c639;
+  --color-midnight-text: #222c44;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+section {
+  @apply pt-26 lg:pt-32 pb-1 ;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.slick-dots {
+  color: #1A21BC;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #1A21BC !important;
+}
+
+.slick-dots li button:before {
+  font-size: 11px !important;
 }
